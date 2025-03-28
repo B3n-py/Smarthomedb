@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Device Schedules</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Scheduled Device Activity</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Device</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+        </tr>
+        {% for s in schedules %}
+        <tr>
+            <td>{{ s.scheduleId }}</td>
+            <td>{{ s.deviceName }}</td>
+            <td>{{ s.startTime }}</td>
+            <td>{{ s.endTime }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

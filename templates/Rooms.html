@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Rooms</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Smart Home Rooms</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Floor</th>
+            <th>Purpose</th>
+        </tr>
+        {% for room in rooms %}
+        <tr>
+            <td>{{ room.roomId }}</td>
+            <td>{{ room.roomName }}</td>
+            <td>{{ room.floor }}</td>
+            <td>{{ room.purpose }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

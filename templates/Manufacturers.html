@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manufacturers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Device Manufacturers</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Location</th>
+        </tr>
+        {% for m in manufacturers %}
+        <tr>
+            <td>{{ m.manufacturerId }}</td>
+            <td>{{ m.name }}</td>
+            <td>{{ m.contact }}</td>
+            <td>{{ m.location }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

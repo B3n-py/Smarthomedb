@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Device Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Device Settings</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Setting ID</th>
+            <th>Device Name</th>
+            <th>Setting Name</th>
+            <th>Setting Value</th>
+        </tr>
+        {% for s in settings %}
+        <tr>
+            <td>{{ s.settingId }}</td>
+            <td>{{ s.deviceName }}</td>
+            <td>{{ s.settingName }}</td>
+            <td>{{ s.settingValue }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

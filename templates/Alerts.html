@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Alerts</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Smart Home Alerts</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Alert ID</th>
+            <th>Device ID</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+        {% for alert in alerts %}
+        <tr>
+            <td>{{ alert.alertId }}</td>
+            <td>{{ alert.deviceId }}</td>
+            <td>{{ alert.alertMessage }}</td>
+            <td>{{ alert.alertTime }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

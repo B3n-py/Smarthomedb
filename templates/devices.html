@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Devices</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Smart Home Devices</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Status</th>
+            <th>Energy Consumption</th>
+            <th>Manufacturer ID</th>
+            <th>Room ID</th>
+        </tr>
+        {% for d in devices %}
+        <tr>
+            <td>{{ d.deviceId }}</td>
+            <td>{{ d.deviceName }}</td>
+            <td>{{ d.deviceType }}</td>
+            <td>{{ d.currentStatus }}</td>
+            <td>{{ d.energyConsumption }}</td>
+            <td>{{ d.manufacturerId }}</td>
+            <td>{{ d.roomId }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

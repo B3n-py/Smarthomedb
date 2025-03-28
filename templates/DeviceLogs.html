@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Device Logs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Device Activity Logs</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Log ID</th>
+            <th>Device ID</th>
+            <th>Message</th>
+            <th>Time</th>
+        </tr>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.logId }}</td>
+            <td>{{ log.deviceId }}</td>
+            <td>{{ log.logMessage }}</td>
+            <td>{{ log.logTime }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

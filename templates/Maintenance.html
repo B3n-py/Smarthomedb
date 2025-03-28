@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Maintenance Schedule</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Maintenance Tasks</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>ID</th>
+            <th>Device</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+        {% for m in maintenance %}
+        <tr>
+            <td>{{ m.maintenanceId }}</td>
+            <td>{{ m.deviceName }}</td>
+            <td>{{ m.scheduleDate }}</td>
+            <td>{{ m.description }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>

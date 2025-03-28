@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Energy Usage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+    <h1>Energy Usage Logs</h1>
+
+    <table border="1" cellpadding="5">
+        <tr>
+            <th>Usage ID</th>
+            <th>Device Name</th>
+            <th>Usage (kWh)</th>
+            <th>Recorded Date</th>
+        </tr>
+        {% for u in usage %}
+        <tr>
+            <td>{{ u.usageId }}</td>
+            <td>{{ u.deviceName }}</td>
+            <td>{{ u.usageInKWh }}</td>
+            <td>{{ u.recordedDate }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to Home</a>
+</body>
+
+</html>
